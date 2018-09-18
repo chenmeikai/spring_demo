@@ -1,6 +1,5 @@
 package com.kenhome.web.controller;
 
-import com.kenhome.common.entity.User;
 import com.kenhome.server.service.test.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
