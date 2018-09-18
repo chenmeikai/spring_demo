@@ -1,6 +1,11 @@
 package com.kenhome.server.service.test.impl;
 
+import com.kenhome.common.constant.account.SexEnum;
+import com.kenhome.common.entity.account.User;
+import com.kenhome.common.utils.code.MD5;
+import com.kenhome.server.mapper.account.UserMapper;
 import com.kenhome.server.service.test.TestService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,9 +17,27 @@ import org.springframework.stereotype.Service;
 @Service
 public class TestServiceImpl implements TestService {
 
+    @Autowired
+    private UserMapper userMapper;
+
     @Override
     public String test(String username) {
-        System.out.println(username);
-        return username;
+
+        User user = userMapper.findByUsername(username);
+        System.out.println(user.getSex().getName());
+        return user.getSex().getName();
+    }
+
+    @Override
+    public String save(String username,String password,String phone) {
+        User user =new User();
+        user.init();
+        user.setUsername(username);
+        password = MD5.getIntance().start(password);
+        user.setPassword(password);
+        user.setPhone(phone);
+        user.setSex(SexEnum.BOY);
+        int code = userMapper.insert(user);
+        return  code+"";
     }
 }

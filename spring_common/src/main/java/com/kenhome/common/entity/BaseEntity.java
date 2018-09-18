@@ -5,7 +5,6 @@ import com.kenhome.common.utils.code.EntityIdGenerator;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;

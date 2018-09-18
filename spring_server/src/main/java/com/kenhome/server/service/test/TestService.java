@@ -8,4 +8,6 @@ package com.kenhome.server.service.test;
 public interface TestService {
 
     public  String test(String username);
+
+    public  String save(String username,String password,String phone);
 }

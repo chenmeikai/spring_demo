@@ -1,5 +1,7 @@
 package com.kenhome.web.controller;
 
+import com.kenhome.common.entity.account.User;
+import com.kenhome.server.mapper.account.UserMapper;
 import com.kenhome.server.service.test.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +20,13 @@ public class TestController {
 
     @GetMapping("test")
     public String test(String username){
-        User user =new User();
-        testService.test(username);
-        return username;
+
+
+        return testService.test(username);
+    }
+
+    @GetMapping("save")
+    public String save(String username,String password,String phone){
+        return testService.save(username,password,phone);
     }
 }
