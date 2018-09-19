@@ -1,13 +1,9 @@
 package com.kenhome.common.model.universal;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kenhome.common.constant.universal.ResponseEnum;
 import com.kenhome.common.model.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.io.Serializable;
-import java.util.Date;
 
 /**
  * @Author: cmk
