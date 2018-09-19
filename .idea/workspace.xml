@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a4456b0-2017-4141-970a-175c59ff6aee" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/spring_common/src/main/java/com/kenhome/common/entity/account/Friend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring_server/src/main/java/com/kenhome/server/mapper/account/FriendMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring_server/src/main/java/com/kenhome/server/service/user/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring_server/src/main/java/com/kenhome/server/service/user/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring_web/src/main/java/com/kenhome/web/controller/account/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3a4456b0-2017-4141-970a-175c59ff6aee" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/spring_common/target/" />
@@ -95,7 +88,7 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spring_web/src/main/java/com/kenhome/web/controller/account/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
+            <state relative-caret-position="528">
               <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding>
                 <element signature="e#1136#1137#0" expanded="true" />
@@ -594,12 +587,12 @@
       <workItem from="1537249329769" duration="5833000" />
       <workItem from="1537256881512" duration="44000" />
       <workItem from="1537256988679" duration="5756000" />
-      <workItem from="1537279221819" duration="2283000" />
+      <workItem from="1537279221819" duration="2884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42668000" />
+    <option name="totallyTimeSpent" value="43269000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -626,7 +619,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" visible="true" weight="0.32683983" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.32683983" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -927,7 +920,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spring_web/src/main/java/com/kenhome/web/controller/account/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
+        <state relative-caret-position="528">
           <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
             <element signature="e#1136#1137#0" expanded="true" />
