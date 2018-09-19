@@ -5,8 +5,11 @@ import com.kenhome.server.base.BaseMapper;
 import com.kenhome.server.base.BaseServiceImpl;
 import com.kenhome.server.mapper.account.UserMapper;
 import com.kenhome.server.service.user.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Author cmk
@@ -22,5 +25,10 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     @Override
     protected BaseMapper<User> getBaseMapper() {
         return userMapper;
+    }
+
+    @Override
+    public List<User> getFriendsByUserId(@Param("userId") String userId) {
+        return userMapper.getFriendsByUserId(userId);
     }
 }
