@@ -1,6 +1,7 @@
 package com.kenhome.common.entity.account;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kenhome.common.constant.account.SexEnum;
 import com.kenhome.common.entity.BaseEntity;
 import com.kenhome.common.utils.code.CodeGenerator;
@@ -43,7 +44,7 @@ public class User extends BaseEntity {
     private SexEnum sex;
 
     @Column(name = "birthday")
-    @JSONField(format = "yyyy-MM-dd 00:00:00")
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd 00:00:00")
     private Date birthday;
 
     @Column(name = "phone")

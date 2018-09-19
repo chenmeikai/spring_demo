@@ -1,6 +1,7 @@
 package com.kenhome.common.entity;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kenhome.common.utils.code.EntityIdGenerator;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,7 +31,7 @@ public class BaseEntity implements Serializable {
     @Column(name = "create_date")
     @Getter
     @Setter
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createDate;
 
     /**

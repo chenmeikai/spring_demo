@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @Author cmk
  * @Description
@@ -35,5 +37,12 @@ public class UserController {
     @GetMapping("save.json")
     public String save(String username,String password,String phone){
         return  null;
+    }
+
+    @GetMapping("getFriends.json")
+    public List<User> getFriends(String userId){
+        List<User> users = userService.getFriendsByUserId(userId);
+        log.info("好友信息:{}", JSON.toJSONString(users));
+        return users;
     }
 }
