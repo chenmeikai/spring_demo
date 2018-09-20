@@ -3,12 +3,15 @@ package com.kenhome.web.controller;
 import com.kenhome.common.constant.universal.ResponseEnum;
 import com.kenhome.common.entity.account.User;
 import com.kenhome.common.model.universal.ResponseModel;
-import com.kenhome.server.mapper.account.UserMapper;
 import com.kenhome.server.service.test.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,6 +21,7 @@ import java.util.Map;
  * @Date 2018\9\16 0016 21:40
  */
 @RestController
+@Validated
 public class TestController {
 
     @Autowired
@@ -31,8 +35,13 @@ public class TestController {
     }
 
     @GetMapping("save")
-    public String save(String username,String password,String phone){
-        return testService.save(username,password,phone);
+    public String save(@Validated User user){
+        return testService.save(user.getUsername(),user.getPassword(), user.getPhone());
+    }
+
+    @GetMapping("save2")
+    public String save(@NotNull String username,@NotNull String password,@Max(12) String phone){
+        return testService.save(username,password, phone);
     }
 
     @GetMapping("success")
@@ -56,6 +65,13 @@ public class TestController {
     @GetMapping("fail1")
     public ResponseModel fail(String name,Integer age){
         return ResponseModel.failWithParameters(ResponseEnum.NO_ENOUGH_AGE,name,age);
+    }
+
+
+    @GetMapping("well")
+    public ResponseModel well(String name){
+        int i =1/0;
+        return ResponseModel.success();
     }
 
 }
