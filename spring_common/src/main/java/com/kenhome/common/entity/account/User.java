@@ -1,18 +1,18 @@
 package com.kenhome.common.entity.account;
 
-import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kenhome.common.constant.account.SexEnum;
 import com.kenhome.common.entity.BaseEntity;
 import com.kenhome.common.utils.code.CodeGenerator;
-import com.kenhome.common.utils.code.EntityIdGenerator;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 /**
@@ -32,9 +32,11 @@ public class User extends BaseEntity {
     private String userNo;
 
     @Column(name = "username")
+    @NotNull
     private String username;
 
     @Column(name = "password")
+    @NotNull
     private String password;
 
     @Column(name = "signatrue")
@@ -48,6 +50,8 @@ public class User extends BaseEntity {
     private Date birthday;
 
     @Column(name = "phone")
+    @Pattern(regexp = "^1(3|4|5|7|8)\\d{9}$",message = "手机号码格式错误")
+    @NotBlank(message = "手机号码不能为空")
     private String phone;
 
     @Column(name = "real_name")
