@@ -16,6 +16,8 @@
     <modules>
         <module>../spring_server</module>
         <module>../spring_web</module>
+        <module>../spring_manager</module>
+        <module>../spring_coin</module>
     </modules>
 
 
