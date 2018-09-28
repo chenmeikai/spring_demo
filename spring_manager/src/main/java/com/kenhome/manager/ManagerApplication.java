@@ -7,9 +7,9 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication(scanBasePackages ="com.kenhome")
 @MapperScan(basePackageClasses = MapperRoot.class)
-public class WebApplication {
+public class ManagerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebApplication.class, args);
+        SpringApplication.run(ManagerApplication.class, args);
     }
 }

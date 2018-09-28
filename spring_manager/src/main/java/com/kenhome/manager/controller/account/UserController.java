@@ -18,7 +18,7 @@ import java.util.List;
  * @Date 2018\9\16 0016 21:40
  */
 @RestController
-@RequestMapping("web/user")
+@RequestMapping("manager/user")
 @Slf4j
 public class UserController {
 

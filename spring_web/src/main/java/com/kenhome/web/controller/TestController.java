@@ -3,14 +3,13 @@ package com.kenhome.web.controller;
 import com.kenhome.common.constant.universal.ResponseEnum;
 import com.kenhome.common.entity.account.User;
 import com.kenhome.common.model.universal.ResponseModel;
-import com.kenhome.server.service.test.TestService;
+import com.kenhome.service.service.test.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.HashMap;
 import java.util.Map;
