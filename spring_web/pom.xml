@@ -27,7 +27,7 @@
     <dependencies>
         <dependency>
             <groupId>com.kenhome</groupId>
-            <artifactId>spring_server</artifactId>
+            <artifactId>spring_service</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>

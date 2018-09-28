@@ -11,7 +11,9 @@ import io.netty.handler.codec.LengthFieldPrepender;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 
@@ -37,16 +39,13 @@ public class NettyServerListener {
      * Worker
      */
     private EventLoopGroup work = new NioEventLoopGroup();
-    /**
-     * 通道适配器
-     */
+
     @Resource
-    private ServerChannelHandlerAdapter channelHandlerAdapter;
-    /**
-     * NETT服务器配置类
-     */
-    @Resource
-    private NettyServer nettyServer;
+    private ServerInitializer serverInitializer;
+
+    @Value("${netty.port}")
+    private Integer port;
+
 
     /**
      * 关闭服务器方法
@@ -64,29 +63,19 @@ public class NettyServerListener {
      */
     public void start() {
 
-        int port = nettyServer.getPort();
         serverBootstrap.group(boss, work)
                 .channel(NioServerSocketChannel.class)
                 .option(ChannelOption.SO_BACKLOG, 100)
                 .handler(new LoggingHandler(LogLevel.INFO));
         try {
             //设置事件处理
-            serverBootstrap.childHandler(new ChannelInitializer<SocketChannel>() {
-                @Override
-                protected void initChannel(SocketChannel ch) throws Exception {
-                    ChannelPipeline pipeline = ch.pipeline();
-                    pipeline.addLast(new LengthFieldBasedFrameDecoder(nettyServer.getMaxFrameLength()
-                            , 0, 2, 0, 2));
-                    pipeline.addLast(new LengthFieldPrepender(2));
-                    pipeline.addLast(new ObjectCodec());
-                    pipeline.addLast(channelHandlerAdapter);
-                }
-            });
+            serverBootstrap.childHandler(serverInitializer);
             log.info("netty服务器在[{}]端口启动监听", port);
             ChannelFuture f = serverBootstrap.bind(port).sync();
+            // 监听服务器关闭监听
             f.channel().closeFuture().sync();
         } catch (InterruptedException e) {
-            log.info("[出现异常] 释放资源");
+            log.error("netty发生异常",e);
             boss.shutdownGracefully();
             work.shutdownGracefully();
         }

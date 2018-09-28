@@ -10,15 +10,14 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 
 /**
- * NettyServer通道适配器
+ * 自定义处理器
  * @author cmk
  * @date 2018/9/27 - 上午21:40
  */
 @Component
 @Sharable
 @Slf4j
-public class ServerChannelHandlerAdapter extends SimpleChannelInboundHandler {
-
+public class ServerHandler extends SimpleChannelInboundHandler {
 
 
     @Override

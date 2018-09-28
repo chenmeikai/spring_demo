@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>../spring_server</module>
+        <module>../spring_service</module>
         <module>../spring_web</module>
         <module>../spring_manager</module>
         <module>../spring_coin</module>

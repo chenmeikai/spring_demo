@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kenhome</groupId>
-    <artifactId>spring_server</artifactId>
+    <artifactId>spring_service</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>spring_server</name>
+    <name>spring_service</name>
     <description>服务模块</description>
 
     <parent>
